@@ -537,29 +537,10 @@
 
   /* ── MOBILE ── */
   @media (max-width: 900px) {
-    /* Scroll = whole wrapper so nav scrolls away (no sticky/fixed overlap) */
-    .page-wrapper {
-      overflow-y: auto;
-      overflow-x: hidden;
-      -webkit-overflow-scrolling: touch;
-    }
-    nav {
-      position: relative;
-      padding: 20px 24px;
-    }
-    .page {
-      position: relative;
-      padding: 24px 6vw 60px 6vw;
-      align-items: flex-start;
-      overflow: visible;
-    }
-    .page:not(.active) {
-      display: none;
-    }
-    .page.active {
-      display: flex;
-    }
-    #home.page { padding-top: 24px; padding-bottom: 40px; }
+    nav { padding: 20px 24px; }
+    .page { padding: 100px 6vw 60px 6vw; align-items: flex-start; }
+    /* Home: keep some top gap under navbar on mobile */
+    #home.page { padding-top: 100px; padding-bottom: 40px; }
     .hero-title { font-size: clamp(88px, 18vw, 160px); }
     #about .about-layout { grid-template-columns: 1fr; gap: 32px; }
     .about-stats { gap: 1px; }
@@ -602,17 +583,19 @@
 <!-- Lava canvas -->
 <canvas id="lava-canvas"></canvas>
 
-<!-- Pages (nav inside on mobile so it scrolls away) -->
+<!-- Navigation -->
+<nav id="main-nav">
+  <div class="nav-logo" onclick="navigateTo('home')">aak</div>
+  <ul class="nav-links">
+    <li><a href="#" data-page="home" class="active">Home</a></li>
+    <li><a href="#" data-page="about">About</a></li>
+    <li><a href="#" data-page="projects">Projects</a></li>
+    <li><a href="#" data-page="contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- Pages -->
 <div class="page-wrapper">
-  <nav id="main-nav">
-    <div class="nav-logo" onclick="navigateTo('home')">aak</div>
-    <ul class="nav-links">
-      <li><a href="#" data-page="home" class="active">Home</a></li>
-      <li><a href="#" data-page="about">About</a></li>
-      <li><a href="#" data-page="projects">Projects</a></li>
-      <li><a href="#" data-page="contact">Contact</a></li>
-    </ul>
-  </nav>
 
   <!-- HOME -->
   <section class="page active" id="home">
