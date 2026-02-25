@@ -144,15 +144,19 @@
     position: fixed;
     inset: 0;
     z-index: 10;
+    overflow: hidden;
   }
 
   .page {
     position: absolute;
     inset: 0;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: flex-start;
-    padding: 0 10vw;
+    padding: 90px 10vw 60px 10vw;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
     opacity: 0;
     pointer-events: none;
     filter: blur(12px);
@@ -173,6 +177,12 @@
     pointer-events: none;
     filter: blur(12px);
     transform: scale(1.02);
+  }
+  /* Home stays vertically centered and doesn't need scroll */
+  #home.page {
+    align-items: center;
+    padding-top: 0;
+    padding-bottom: 0;
   }
 
   /* ── HOME ── */
@@ -544,7 +554,8 @@
   /* ── MOBILE ── */
   @media (max-width: 900px) {
     nav { padding: 20px 24px; }
-    .page { padding: 0 6vw; padding-top: 100px; align-items: flex-start; }
+    .page { padding: 100px 6vw 60px 6vw; align-items: flex-start; }
+    #home.page { padding-top: 0; padding-bottom: 0; }
     .hero-title { font-size: clamp(88px, 18vw, 160px); }
     #about .about-layout { grid-template-columns: 1fr; gap: 32px; }
     .about-stats { gap: 1px; }
@@ -636,8 +647,8 @@
       <div class="about-text">
         <div class="eyebrow">About me</div>
         <h2>Fullstack<br>development.</h2>
-        <p>I'm a <strong>fullstack developer</strong> working across the stack. From APIs, data models and Linux servers to frontend interfaces, I like owning the whole flow from idea to production.</p>
-        <p>I started my career interning in a <strong>cyber security</strong> team at a major bank, and now I build new public-facing projects as a <strong>fullstack developer</strong> at a corporate organization. I also work with external clients, creating tailored solutions that meet real-world needs. That background makes me think about security, reliability and real-world impact in every feature I ship.</p>
+        <p>I'm a <strong>fullstack developer</strong> working across the stack—from APIs and backend to frontend. I like owning the whole flow from idea to production.</p>
+        <p>I started in <strong>cyber security</strong> at a major bank; now I build public-facing products at a corporate and work with external clients. That background keeps me focused on security and reliability in everything I ship.</p>
         <div class="skill-tags">
           <span class="tag">React</span>
           <span class="tag">Next.js</span>
@@ -950,6 +961,7 @@ function navigateTo(targetId) {
 
   if (nextPageEl) {
     nextPageEl.classList.add('active');
+    nextPageEl.scrollTop = 0;
   }
 
   currentPage = targetId;
