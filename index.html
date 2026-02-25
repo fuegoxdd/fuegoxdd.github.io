@@ -449,20 +449,6 @@
     color: var(--muted);
   }
 
-  .project-arrow {
-    position: absolute;
-    bottom: 40px;
-    right: 40px;
-    font-size: 20px;
-    color: var(--muted);
-    transition: all 0.3s;
-    transform: rotate(45deg);
-  }
-  .project-card:hover .project-arrow {
-    color: var(--accent);
-    transform: rotate(45deg) translate(3px, -3px);
-  }
-
   /* ── CONTACT ── */
   #contact .contact-layout {
     max-width: 800px;
@@ -570,7 +556,6 @@
     .project-card h3 { font-size: 20px; margin-bottom: 8px; }
     .project-card p { font-size: 12px; margin-bottom: 14px; }
     .project-tags { gap: 4px; }
-    .project-arrow { bottom: 18px; right: 18px; }
     /* Disable hover look on touch devices */
     .project-card:hover {
       background: var(--bg);
@@ -581,11 +566,6 @@
     .project-card:hover h3 {
       color: #fff;
     }
-    .project-card:hover .project-arrow {
-      color: var(--muted);
-      transform: rotate(45deg);
-    }
-
     .contact-links { min-width: auto; width: 100%; }
     .nav-links { gap: 20px; }
     .cursor { display: none; }
@@ -704,7 +684,6 @@
             <span class="project-tag">MongoDB</span>
             <span class="project-tag">Modular Monolith</span>
           </div>
-          <div class="project-arrow">↗</div>
         </div>
         <div class="project-card">
           <span class="project-num">02</span>
@@ -716,7 +695,6 @@
             <span class="project-tag">Event-Driven</span>
             <span class="project-tag">RabbitMQ</span>
           </div>
-          <div class="project-arrow">↗</div>
         </div>
         <div class="project-card">
           <span class="project-num">03</span>
@@ -728,7 +706,6 @@
             <span class="project-tag">Node.js</span>
             <span class="project-tag">MongoDB</span>
           </div>
-          <div class="project-arrow">↗</div>
         </div>
       </div>
     </div>
