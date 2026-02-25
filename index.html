@@ -349,6 +349,10 @@
     color: var(--muted);
     margin-top: 8px;
   }
+  /* Infinity symbol: use font that has the glyph (Bebas Neue often doesn't on mobile) */
+  .stat-num-symbol {
+    font-family: 'DM Sans', system-ui, sans-serif;
+  }
 
   .skill-tags {
     display: flex;
@@ -661,7 +665,7 @@
           <div class="stat-label">Clients</div>
         </div>
         <div class="stat-box">
-          <div class="stat-num">∞</div>
+          <div class="stat-num stat-num-symbol">∞</div>
           <div class="stat-label">Coffee</div>
         </div>
       </div>
