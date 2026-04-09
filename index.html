@@ -12,9 +12,9 @@
     --bg: #070709;
     --surface: rgba(255,255,255,0.03);
     --border: rgba(255,255,255,0.06);
-    --accent: #4a9cff;
-    --accent2: #22d18a;
-    --accent3: #eef6ff;
+    --accent: #64ffda;
+    --accent2: #ff6b6b;
+    --accent3: #a78bfa;
     --text: #e2e2e2;
     --muted: rgba(255,255,255,0.65);
     --transition: 800ms cubic-bezier(0.76, 0, 0.24, 1);
@@ -833,10 +833,10 @@ void main() {
   float glow = smoothstep(0.35, 0.8, field) * 0.5;
 
   // Color palette
-  vec3 c1 = vec3(0.08, 0.45, 0.95);  // blue
-  vec3 c2 = vec3(0.08, 0.78, 0.48);  // green
-  vec3 c3 = vec3(0.92, 0.96, 1.00);  // white
-  vec3 bg = vec3(0.02, 0.05, 0.09);  // deep blue-black
+  vec3 c1 = vec3(0.05, 0.55, 0.42);  // teal/mint
+  vec3 c2 = vec3(0.40, 0.25, 0.90);  // purple
+  vec3 c3 = vec3(0.95, 0.40, 0.30);  // coral — tertiary blobs
+  vec3 bg = vec3(0.027, 0.027, 0.035);
 
   // Blend colors by position
   float cx = uv.x * 0.5 + 0.5;
